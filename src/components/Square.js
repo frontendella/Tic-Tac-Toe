@@ -1,3 +1,4 @@
+import React from 'react';
 
 const style = {
     background: 'lightblue',
@@ -6,9 +7,9 @@ const style = {
     fontWeight: '800',
     cursor: 'pointer',
     outline: 'none'
-}
+};
 
-const Square = ({ onClick, value }) => (
+const Square = ({ value, onClick }) => (
     <button style={style} onClick={onClick}>
         {value}
     </button>

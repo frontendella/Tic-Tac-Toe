@@ -2,10 +2,22 @@ import React, { useState } from 'react';
 import { calculateWinner } from './calculateWinner';
 import Board from './Board';
 
-const styles = {
-    width: '200px',
-    margin: '20px auto',
-};
+
+const buttonStyle = {
+    width: '10rem',
+    height: '4em',
+    backgroundColor: '#f3eae8',
+    padding: '10px',
+    marginBottom: '3px',
+    border: '2px solid grey',
+    borderRadius: '6px',
+    color: 'black',
+    fontWeight: '800',
+    fontSize: '15px',
+    lineHeight: '1.5em',
+    cursor: 'pointer',
+
+}
 
 const Game = () => {
     const [history, setHistory] = useState([Array(9).fill(null)]);
@@ -20,7 +32,7 @@ const Game = () => {
         // If user click an occupied square or if game is won, return
         if (squares[i]) return;
         // Put an X or an O in the clicked square
-        squares[i] = xIsNext ? 'X' : 'O';
+        squares[i] = xIsNext ? '❌' : 'O';
         setHistory([...timeInHistory, squares]);
         setStepNumber(timeInHistory.length);
         setXisNext(!xIsNext);
@@ -36,7 +48,7 @@ const Game = () => {
             const destination = move ? `Go to move#${move}` : 'Go to start';
             return (
                 <li key={move}>
-                    <button onClick={() => jumpTo(move)}>{destination}</button>
+                    <button style={buttonStyle} onClick={() => jumpTo(move)}>{destination}</button>
                 </li>
             )
         })
@@ -45,8 +57,8 @@ const Game = () => {
     return (
         <>
             <Board squares={history[stepNumber]} onClick={handleClick} />
-            <div style={styles}>
-                <p>{winner ? 'Winner: ' + winner : 'Next Player: ' + (xIsNext ? 'X' : 'O')}</p>
+            <div>
+                <p>{winner ? 'Winner: ' + winner : 'Next Player: ' + (xIsNext ? '❌' : 'O')}</p>
                 {renderMoves()}
             </div>
         </>

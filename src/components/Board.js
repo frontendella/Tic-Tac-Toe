@@ -1,13 +1,15 @@
 import Square from './Square';
 
 const style = {
-    border: '4px solid darkblue',
+    border: '4px solid #00226c',
     borderRadius: '10px',
-    width: '250px',
-    height: '250px',
+    width: '400px',
+    height: '400px',
     margin: '0 auto',
+    marginTop: '15em',
     display: 'grid',
-    gridTemplate: 'repeat(3, 1fr) / repeat(3, 1fr)'
+    gridTemplate: 'repeat(3, 1fr) / repeat(3, 1fr)',
+
 };
 
 const Board = ({ squares, onClick }) => (

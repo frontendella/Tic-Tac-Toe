@@ -1,4 +1,21 @@
 import Board from "./Board"
-const Game = () => <div><Board /></div>
+
+const Game = () => {
+    const handleClick = () => {
+
+    }
+
+    const jumpTo = () => {
+
+    }
+
+    const renderMoves = () => {
+
+    }
+
+    return (
+        <div><Board onClick={handleClick} /></div>
+    )
+}
 
 export default Game
